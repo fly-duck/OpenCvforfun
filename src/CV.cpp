@@ -13,7 +13,22 @@ int main(int, char**) {
 
     cv::Mat imgFrame;
 
+
+    cv::Mat selfie=cv::imread("../../res/Dog_sun.png");
+
+
+    CV_Processor::Sizeofthemat(selfie);
+    // cv::resize
     capVideo.open("../../res/768x576.avi");
+//     cv::putText(selfie,
+// "This is a dog.",
+// cv::Point(40,40),
+// cv::FONT_HERSHEY_PLAIN,
+// 2.0,
+// 255,
+// 2);
+    
+
     
 
     if (!capVideo.isOpened()) {                                                 // if unable to open video file
@@ -33,6 +48,9 @@ int main(int, char**) {
     }
 
     capVideo.read(imgFrame);
+    CV_Processor::Sizeofthemat(imgFrame);
+    // cv::resize(imgFrame, selfie, cv::Size(), 0.05, 0.05);
+   
     cv::HOGDescriptor hog;
     hog.setSVMDetector(cv::HOGDescriptor::getDefaultPeopleDetector());
     std::vector<cv::Rect> found,filter;
@@ -45,7 +63,8 @@ int main(int, char**) {
 
         cv::Mat image;
         hog.detectMultiScale(imgFrame,found,0,cv::Size(8,8),cv::Size(128,128),1.05,5);
-
+        // cv::imshow("Dog_sun",selfie);
+        
 
         size_t i, j;
         for (i=0; i<found.size(); i++)
@@ -57,14 +76,19 @@ int main(int, char**) {
             if (j==found.size())
                 filter.push_back(r);
         }
-        for (i=0; i<filter.size(); i++)
+        for ( i=0; i<filter.size(); i++)
         {
             cv::Rect r = filter[i];
+            // std::cout<<r;
             r.x += cvRound(r.width*0.1);
             r.width = cvRound(r.width*0.8);
             r.y += cvRound(r.height*0.06);
             r.height = cvRound(r.height*0.9);
-            rectangle(imgFrame, r.tl(), r.br(), cv::Scalar(0,255,0), 2);
+            cv::Mat imageROI(imgFrame,cv::Rect(r.x,r.y,selfie.cols,selfie.rows));
+            selfie.copyTo(imageROI);
+            cv::rectangle(imgFrame, r.tl(), r.br(), cv::Scalar(0,255,0), 2);
+            // cv::Mat truncated =selfie(cv::Rect(0,0,10,10)); 
+            // truncated.copyTo(imgFrame(cv::Rect(0,0,10,10)));
         }
         if(!capVideo.read(image))
         {
