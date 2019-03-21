@@ -14,10 +14,14 @@ int main(int, char**) {
     cv::Mat imgFrame;
 
 
-    cv::Mat selfie=cv::imread("../../res/Dog_sun.png");
+    cv::Mat previous_selfie=cv::imread("../../res/Dog_sun.png");
 
-
+    cv::Mat selfie;
+    cv::resize(previous_selfie,selfie,cv::Size(previous_selfie.cols/4,previous_selfie.rows/4));    
+    CV_Processor::Sizeofthemat(previous_selfie);
     CV_Processor::Sizeofthemat(selfie);
+
+
     // cv::resize
     capVideo.open("../../res/768x576.avi");
 //     cv::putText(selfie,
