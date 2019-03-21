@@ -1,16 +1,11 @@
 // PlayVideoFileCpp.sln
 // main.cpp
 
-#include<opencv2/core/core.hpp>
-#include<opencv2/highgui/highgui.hpp>
-#include "opencv2/objdetect/objdetect.hpp"
-#include<opencv2/imgproc/imgproc.hpp>
-
-#include<iostream>
+#include "../include/CV.hpp"
 // #include<conio.h>           // it may be necessary to change or remove this line if not using Windows
 
 using Fps=double;
-using namespace cv;
+// using namespace cv;
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 int main(int, char**) {
 
@@ -18,7 +13,7 @@ int main(int, char**) {
 
     cv::Mat imgFrame;
 
-    capVideo.open("768x576.avi");
+    capVideo.open("../../res/768x576.avi");
     
 
     if (!capVideo.isOpened()) {                                                 // if unable to open video file
@@ -30,7 +25,7 @@ int main(int, char**) {
     std::cout<< "Frame per seconds :"<< fps << "\n";
 
     // capVideo.namedWindow("MyVideo",CV_WINDOW_AUTOSIZE); //create a window called "MyVideo"
-
+    // assert(capVideo.get(CV_CAP_PROP_FRAME_COUNT)==2);
     if (capVideo.get(CV_CAP_PROP_FRAME_COUNT) < 1) {
         std::cout << "\nerror: video file must have at least one frame";
         // _getch();
@@ -38,9 +33,10 @@ int main(int, char**) {
     }
 
     capVideo.read(imgFrame);
-    HOGDescriptor hog;
-    hog.setSVMDetector(HOGDescriptor::getDefaultPeopleDetector());
-    
+    cv::HOGDescriptor hog;
+    hog.setSVMDetector(cv::HOGDescriptor::getDefaultPeopleDetector());
+    std::vector<cv::Rect> found,filter;
+    cvtColor(imgFrame, imgFrame, CV_RGB2GRAY);
 
     char chCheckForEscKey = 0;
 
@@ -48,11 +44,33 @@ int main(int, char**) {
 
 
         cv::Mat image;
+        hog.detectMultiScale(imgFrame,found,0,cv::Size(8,8),cv::Size(128,128),1.05,5);
+
+
+        size_t i, j;
+        for (i=0; i<found.size(); i++)
+        {
+            cv::Rect r = found[i];
+            for (j=0; j<found.size(); j++)
+                if (j!=i && (r & found[j])==r)
+                    break;
+            if (j==found.size())
+                filter.push_back(r);
+        }
+        for (i=0; i<filter.size(); i++)
+        {
+            cv::Rect r = filter[i];
+            r.x += cvRound(r.width*0.1);
+            r.width = cvRound(r.width*0.8);
+            r.y += cvRound(r.height*0.06);
+            r.height = cvRound(r.height*0.9);
+            rectangle(imgFrame, r.tl(), r.br(), cv::Scalar(0,255,0), 2);
+        }
         if(!capVideo.read(image))
         {
             std::cout<<"can not read video into a matrix" <<"\n";
         }
-        std::vector<cv::Rect> found;
+        // std::vector<cv::Rect> found;
         cv::imshow("imgFrame", imgFrame);
 
                 // now we prepare for the next iteration
