@@ -1,48 +1,53 @@
 {
-  "configurations": [
-    {
-      "browse": {
-        "databaseFilename": "",
-        "limitSymbolsToIncludedHeaders": true
-      },
-      "includePath": [
-        "/home/booney/Myworkspace/sample_ws/devel/include",
-        "/home/booney/demo_ws/devel/include",
-        "/home/booney/carto_Ws/install_isolated/include",
-        "/opt/ros/kinetic/include",
-        "/home/booney/Myworkspace/nav_ws/src/robot_navigation/costmap_queue/include",
-        "/home/booney/Myworkspace/nav_ws/src/robot_navigation/dlux_global_planner/include",
-        "/home/booney/Myworkspace/nav_ws/src/robot_navigation/dlux_plugins/include",
-        "/home/booney/Myworkspace/nav_ws/src/robot_navigation/dwb_critics/include",
-        "/home/booney/Myworkspace/nav_ws/src/robot_navigation/dwb_local_planner/include",
-        "/home/booney/Myworkspace/nav_ws/src/robot_navigation/dwb_plugins/include",
-        "/home/booney/Myworkspace/nav_ws/src/robot_navigation/global_planner_tests/include",
-        "/home/booney/Myworkspace/nav_ws/src/robot_navigation/locomotor/include",
-        "/home/booney/Myworkspace/nav_ws/src/robot_navigation/locomove_base/include",
-        "/home/booney/Myworkspace/nav_ws/src/move_base_flex/mbf_abstract_core/include",
-        "/home/booney/Myworkspace/nav_ws/src/move_base_flex/mbf_abstract_nav/include",
-        "/home/booney/Myworkspace/nav_ws/src/move_base_flex/mbf_costmap_core/include",
-        "/home/booney/Myworkspace/nav_ws/src/move_base_flex/mbf_costmap_nav/include",
-        "/home/booney/Myworkspace/nav_ws/src/move_base_flex/mbf_simple_nav/include",
-        "/home/booney/Myworkspace/nav_ws/src/move_base_flex/mbf_utility/include",
-        "/home/booney/Myworkspace/nav_ws/src/robot_navigation/nav_2d_utils/include",
-        "/home/booney/Myworkspace/nav_ws/src/robot_navigation/nav_core2/include",
-        "/home/booney/Myworkspace/nav_ws/src/robot_navigation/nav_core_adapter/include",
-        "/home/booney/Myworkspace/nav_ws/src/robot_navigation/nav_grid/include",
-        "/home/booney/Myworkspace/nav_ws/src/robot_navigation/nav_grid_iterators/include",
-        "/home/booney/Myworkspace/nav_ws/src/robot_navigation/nav_grid_pub_sub/include",
-        "/home/booney/Myworkspace/nav_ws/src/nav_stack/include",
-        "/home/booney/Myworkspace/nav_ws/src/spencer_people_tracking/detection/monocular_detectors/rwth_ground_hog/include",
-        "/home/booney/Myworkspace/nav_ws/src/spencer_people_tracking/utils/rwth_ground_plane/include",
-        "/home/booney/Myworkspace/nav_ws/src/spencer_people_tracking/detection/rgbd_detectors/rwth_upper_body_detector/include",
-        "/home/booney/Myworkspace/nav_ws/src/spencer_people_tracking/utils/spencer_diagnostics/include",
-        "/home/booney/Myworkspace/nav_ws/src/spencer_people_tracking/detection/laser_detectors/srl_laser_detectors/include",
-        "/home/booney/Myworkspace/nav_ws/src/spencer_people_tracking/detection/laser_detectors/srl_laser_features/include",
-        "/home/booney/Myworkspace/nav_ws/src/spencer_people_tracking/detection/laser_detectors/srl_laser_segmentation/include",
-        "/home/booney/Myworkspace/nav_ws/src/spencer_people_tracking/tracking/people/srl_nearest_neighbor_tracker/include",
-        "/usr/include"
-      ],
-      "name": "Linux"
-    }
-  ]
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/booney/Myworkspace/sample_ws/devel/include",
+                "/home/booney/demo_ws/devel/include",
+                "/home/booney/carto_Ws/install_isolated/include",
+                "/opt/ros/kinetic/include",
+                "/home/booney/Myworkspace/nav_ws/src/robot_navigation/costmap_queue/include",
+                "/home/booney/Myworkspace/nav_ws/src/robot_navigation/dlux_global_planner/include",
+                "/home/booney/Myworkspace/nav_ws/src/robot_navigation/dlux_plugins/include",
+                "/home/booney/Myworkspace/nav_ws/src/robot_navigation/dwb_critics/include",
+                "/home/booney/Myworkspace/nav_ws/src/robot_navigation/dwb_local_planner/include",
+                "/home/booney/Myworkspace/nav_ws/src/robot_navigation/dwb_plugins/include",
+                "/home/booney/Myworkspace/nav_ws/src/robot_navigation/global_planner_tests/include",
+                "/home/booney/Myworkspace/nav_ws/src/robot_navigation/locomotor/include",
+                "/home/booney/Myworkspace/nav_ws/src/robot_navigation/locomove_base/include",
+                "/home/booney/Myworkspace/nav_ws/src/move_base_flex/mbf_abstract_core/include",
+                "/home/booney/Myworkspace/nav_ws/src/move_base_flex/mbf_abstract_nav/include",
+                "/home/booney/Myworkspace/nav_ws/src/move_base_flex/mbf_costmap_core/include",
+                "/home/booney/Myworkspace/nav_ws/src/move_base_flex/mbf_costmap_nav/include",
+                "/home/booney/Myworkspace/nav_ws/src/move_base_flex/mbf_simple_nav/include",
+                "/home/booney/Myworkspace/nav_ws/src/move_base_flex/mbf_utility/include",
+                "/home/booney/Myworkspace/nav_ws/src/robot_navigation/nav_2d_utils/include",
+                "/home/booney/Myworkspace/nav_ws/src/robot_navigation/nav_core2/include",
+                "/home/booney/Myworkspace/nav_ws/src/robot_navigation/nav_core_adapter/include",
+                "/home/booney/Myworkspace/nav_ws/src/robot_navigation/nav_grid/include",
+                "/home/booney/Myworkspace/nav_ws/src/robot_navigation/nav_grid_iterators/include",
+                "/home/booney/Myworkspace/nav_ws/src/robot_navigation/nav_grid_pub_sub/include",
+                "/home/booney/Myworkspace/nav_ws/src/nav_stack/include",
+                "/home/booney/Myworkspace/nav_ws/src/spencer_people_tracking/detection/monocular_detectors/rwth_ground_hog/include",
+                "/home/booney/Myworkspace/nav_ws/src/spencer_people_tracking/utils/rwth_ground_plane/include",
+                "/home/booney/Myworkspace/nav_ws/src/spencer_people_tracking/detection/rgbd_detectors/rwth_upper_body_detector/include",
+                "/home/booney/Myworkspace/nav_ws/src/spencer_people_tracking/utils/spencer_diagnostics/include",
+                "/home/booney/Myworkspace/nav_ws/src/spencer_people_tracking/detection/laser_detectors/srl_laser_detectors/include",
+                "/home/booney/Myworkspace/nav_ws/src/spencer_people_tracking/detection/laser_detectors/srl_laser_features/include",
+                "/home/booney/Myworkspace/nav_ws/src/spencer_people_tracking/detection/laser_detectors/srl_laser_segmentation/include",
+                "/home/booney/Myworkspace/nav_ws/src/spencer_people_tracking/tracking/people/srl_nearest_neighbor_tracker/include",
+                "/usr/include"
+            ],
+            "name": "Linux",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
 }
