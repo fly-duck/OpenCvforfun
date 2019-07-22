@@ -4,7 +4,7 @@ playing with hog descriptor and tracker
 
 ## Features ##
 
-Having fun with Chinese mimic "人人都是孙笑川"
+Having fun with Chinese meme "人人都是孙笑川"
 
 
 **Future Plan**
